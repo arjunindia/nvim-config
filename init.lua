@@ -1,6 +1,4 @@
 require("arjun");
-print("hello");
-
 
 -- Lazyvim init
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -17,4 +15,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup("plugins")
-
+vim.cmd("colorscheme tokyodark");
