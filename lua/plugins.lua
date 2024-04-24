@@ -17,16 +17,42 @@ return {
         tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { "tiagovla/tokyodark.nvim" }, -- lazy
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    {
+        "tiagovla/tokyodark.nvim",
+        opts = {
+            transparent_background = true,
+        },
+        config = function(_, opts)
+            require("tokyodark").setup(opts)
+        end
+    }, -- lazy
+    { "nvim-treesitter/nvim-treesitter",    build = ":TSUpdate" },
     'mbbill/undotree',
     --- Uncomment the two plugins below if you want to manage the language servers from neovim
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
-    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    { 'VonHeikemen/lsp-zero.nvim',          branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
     { "elentok/format-on-save.nvim" },
+    { 'dawsers/telescope-file-history.nvim' },
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        opts = {
+            -- configurations go here
+        },
+    },
+    { "folke/neodev.nvim",       opts = {} },
+    {
+        'freddiehaddad/feline.nvim'
+    }, { 'edluffy/hologram.nvim' },
+    { 'akinsho/toggleterm.nvim', version = "*", config = true }
 }
