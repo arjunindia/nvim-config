@@ -54,5 +54,12 @@ return {
     {
         'freddiehaddad/feline.nvim'
     }, { 'edluffy/hologram.nvim' },
-    { 'akinsho/toggleterm.nvim', version = "*", config = true }
+    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    { "tpope/vim-commentary" }
 }

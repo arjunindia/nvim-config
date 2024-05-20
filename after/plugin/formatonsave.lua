@@ -10,7 +10,6 @@ format_on_save.setup({
         css = formatters.lsp,
         html = formatters.lsp,
         java = formatters.lsp,
-        javascript = formatters.lsp,
         json = formatters.lsp,
         lua = formatters.lsp,
         markdown = formatters.prettierd,
@@ -24,6 +23,7 @@ format_on_save.setup({
         typescript = formatters.prettierd,
         typescriptreact = formatters.prettierd,
         yaml = formatters.lsp,
+        go = formatters.lsp,
 
         -- Add custom formatter
         filetype1 = formatters.remove_trailing_whitespace,
