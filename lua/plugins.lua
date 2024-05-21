@@ -61,5 +61,17 @@ return {
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-    { "tpope/vim-commentary" }
+    { "tpope/vim-commentary" },
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1001, -- this plugin needs to run before anything else
+        opts = {
+            rocks = { "magick" },
+        },
+    },
+    {
+        "3rd/image.nvim",
+        priority = 5,
+        dependencies = { "luarocks.nvim" },
+    }
 }
