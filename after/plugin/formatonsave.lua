@@ -1,7 +1,12 @@
 local format_on_save = require("format-on-save")
 local formatters = require("format-on-save.formatters")
+local vim_notify = require("format-on-save.error-notifiers.vim-notify")
 
 format_on_save.setup({
+    error_notifier = vim_notify,
+    experiments = {
+        partial_update = "diff",
+    },
     exclude_path_patterns = {
         "/node_modules/",
         ".local/share/nvim/lazy",
@@ -24,37 +29,6 @@ format_on_save.setup({
         typescriptreact = formatters.prettierd,
         yaml = formatters.lsp,
         go = formatters.lsp,
-
-        -- Add custom formatter
-        filetype1 = formatters.remove_trailing_whitespace,
-        filetype2 = formatters.custom({
-            format = function(lines)
-                return vim.tbl_map(function(line)
-                    return line:gsub("true", "false")
-                end, lines)
-            end
-        }),
-
-        -- in one of the parent directories.
-        javascript = {
-            formatters.if_file_exists({
-                pattern = ".eslintrc.*",
-                formatter = formatters.eslint_d_fix
-            }),
-            formatters.if_file_exists({
-                pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
-                formatter = formatters.prettierd,
-            }),
-            -- By default it stops at the git repo root (or "/" if git repo not found)
-            -- but it can be customized with the `stop_path` option:
-            formatters.if_file_exists({
-                pattern = ".prettierrc",
-                formatter = formatters.prettierd,
-                stop_path = function()
-                    return "/my/custom/stop/path"
-                end
-            }),
-        },
     },
 
     -- Optional: fallback formatter to use when no formatters match the current filetype

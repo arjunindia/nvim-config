@@ -26,18 +26,25 @@ return {
             require("tokyodark").setup(opts)
         end
     }, -- lazy
-    { "nvim-treesitter/nvim-treesitter",    build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     'mbbill/undotree',
     --- Uncomment the two plugins below if you want to manage the language servers from neovim
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
-    { 'VonHeikemen/lsp-zero.nvim',          branch = 'v3.x' },
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
-    { 'L3MON4D3/LuaSnip' },
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" }
+    },
     { "elentok/format-on-save.nvim" },
-    { 'dawsers/telescope-file-history.nvim' },
+    { "rcarriga/nvim-notify" },
     {
         "utilyre/barbecue.nvim",
         name = "barbecue",
@@ -69,9 +76,4 @@ return {
             rocks = { "magick" },
         },
     },
-    {
-        "3rd/image.nvim",
-        priority = 5,
-        dependencies = { "luarocks.nvim" },
-    }
 }
