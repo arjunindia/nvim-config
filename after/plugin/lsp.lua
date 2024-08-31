@@ -70,6 +70,23 @@ cmp.setup({
 })
 
 local nvim_lsp = require('lspconfig')
+local configs = require('lspconfig/configs')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "css", "eruby", "html", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+    init_options = {
+        html = {
+            options = {
+                -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+                ["bem.enabled"] = true,
+            },
+        },
+    }
+})
 
 nvim_lsp.rust_analyzer.setup {
     cmd = vim.lsp.rpc.connect("127.0.0.1", 27631),
@@ -93,6 +110,5 @@ nvim_lsp.denols.setup {
 
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
-    root_dir = nvim_lsp.util.root_pattern("package.json"),
     single_file_support = false
 }
