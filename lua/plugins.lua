@@ -1,79 +1,87 @@
 return {
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.6',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  {
+    "tiagovla/tokyodark.nvim",
+    opts = {
+      transparent_background = true,
     },
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.6',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+    config = function(_, opts)
+      require("tokyodark").setup(opts)
+    end
+  }, -- lazy
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+  'mbbill/undotree',
+  --- Uncomment the two plugins below if you want to manage the language servers from neovim
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
+  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+  { 'neovim/nvim-lspconfig' },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/nvim-cmp' },
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+    dependencies = { "rafamadriz/friendly-snippets" }
+  },
+  { "elentok/format-on-save.nvim" },
+  {
+    "rcarriga/nvim-notify"
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
     },
-    {
-        "tiagovla/tokyodark.nvim",
-        opts = {
-            transparent_background = true,
-        },
-        config = function(_, opts)
-            require("tokyodark").setup(opts)
-        end
-    }, -- lazy
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
-    'mbbill/undotree',
-    --- Uncomment the two plugins below if you want to manage the language servers from neovim
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
-    { 'neovim/nvim-lspconfig' },
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/nvim-cmp' },
-    {
-        "L3MON4D3/LuaSnip",
-        -- follow latest release.
-        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!).
-        build = "make install_jsregexp",
-        dependencies = { "rafamadriz/friendly-snippets" }
+    opts = {
+      -- configurations go here
     },
-    { "elentok/format-on-save.nvim" },
-    { "rcarriga/nvim-notify" },
-    {
-        "utilyre/barbecue.nvim",
-        name = "barbecue",
-        version = "*",
-        dependencies = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons", -- optional dependency
-        },
-        opts = {
-            -- configurations go here
-        },
+  },
+  { "folke/neodev.nvim",          opts = {} },
+  {
+    'freddiehaddad/feline.nvim',
+  },
+  { 'edluffy/hologram.nvim' },
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  { "tpope/vim-commentary" },
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1001, -- this plugin needs to run before anything else
+    opts = {
+      rocks = { "magick" },
     },
-    { "folke/neodev.nvim",       opts = {} },
-    {
-        'freddiehaddad/feline.nvim'
-    }, { 'edluffy/hologram.nvim' },
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        -- Optional dependencies
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-    { "tpope/vim-commentary" },
-    {
-        "vhyrro/luarocks.nvim",
-        priority = 1001, -- this plugin needs to run before anything else
-        opts = {
-            rocks = { "magick" },
-        },
-    },
+  },
+  { "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }
 }
