@@ -116,6 +116,8 @@ nvim_lsp.standardrb.setup {
   capabilities = lsp_cmp.default_capabilities(capabilities),
   single_file_support = false
 }
+
+nvim_lsp.biome.setup {}
 nvim_lsp.denols.setup {
   on_attach = on_attach,
   root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),

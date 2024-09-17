@@ -51,6 +51,7 @@ return {
   {
     "rcarriga/nvim-notify"
   },
+  { "rest-nvim/rest.nvim" },
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
@@ -63,7 +64,7 @@ return {
       -- configurations go here
     },
   },
-  { "folke/neodev.nvim",          opts = {} },
+  { "folke/neodev.nvim",       opts = {} },
   {
     'freddiehaddad/feline.nvim',
   },

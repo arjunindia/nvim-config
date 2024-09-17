@@ -15,7 +15,7 @@ format_on_save.setup({
     css = formatters.lsp,
     html = formatters.lsp,
     java = formatters.lsp,
-    json = formatters.lsp,
+    json = formatters.biome,
     lua = formatters.lsp,
     markdown = formatters.prettierd,
     openscad = formatters.lsp,
@@ -34,6 +34,7 @@ format_on_save.setup({
 
   -- Optional: fallback formatter to use when no formatters match the current filetype
   fallback_formatter = {
+    formatters.lsp,
     formatters.remove_trailing_whitespace,
     formatters.remove_trailing_newlines,
     formatters.prettierd,
