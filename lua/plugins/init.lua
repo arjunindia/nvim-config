@@ -41,11 +41,21 @@ return {
   },
 
   {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {--[[ things you want to change go here]]
-      open_mapping = [[<c-\>]],
-    },
+    "numToStr/FTerm.nvim",
+    config = function()
+      require("FTerm").setup {
+        border = "double",
+        dimensions = {
+          height = 0.9,
+          width = 0.9,
+        },
+      }
+
+      -- Example keybindings
+      vim.keymap.set("n", "<A-/>", '<CMD>lua require("FTerm").toggle()<CR>')
+      vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
+      vim.keymap.set("t", "<A-/>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+    end,
   },
   {
     "akinsho/bufferline.nvim",

@@ -58,4 +58,4 @@ Below is the list of some very important plugins which I think should be must fo
 | oil.nvim                | Netrw replacement                            |
 | precognition.nvim       | Vim motions indicator                        |
 | supermaven-nvim         | AI code completion                           |
-| toggleterm.nvim         | Terminal manager                             |
+| FTerm.nvim         | Terminal manager                             |
