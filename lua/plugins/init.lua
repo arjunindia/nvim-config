@@ -4,6 +4,11 @@ return {
   {
     "EdenEast/nightfox.nvim",
     priority = 1000,
+    opts = {
+      options = {
+        transparent = true,
+      },
+    },
     config = true,
   },
 
@@ -25,7 +30,15 @@ return {
       require "plugins.configs.treesitter"
     end,
   },
-
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    config = function()
+      require "plugins.configs.oil"
+    end,
+  },
   {
     "akinsho/bufferline.nvim",
     event = "BufReadPre",
@@ -37,6 +50,51 @@ return {
     config = function()
       require("mini.statusline").setup { set_vim_settings = false }
     end,
+  },
+
+  -- To help my noob self
+  {
+    "tris203/precognition.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- startVisible = true,
+      -- showBlankVirtLine = true,
+      -- highlightColor = { link = "Comment" },
+      -- hints = {
+      --      Caret = { text = "^", prio = 2 },
+      --      Dollar = { text = "$", prio = 1 },
+      --      MatchingPair = { text = "%", prio = 5 },
+      --      Zero = { text = "0", prio = 1 },
+      --      w = { text = "w", prio = 10 },
+      --      b = { text = "b", prio = 9 },
+      --      e = { text = "e", prio = 8 },
+      --      W = { text = "W", prio = 7 },
+      --      B = { text = "B", prio = 6 },
+      --      E = { text = "E", prio = 5 },
+      -- },
+      -- gutterHints = {
+      --     G = { text = "G", prio = 10 },
+      --     gg = { text = "gg", prio = 9 },
+      --     PrevParagraph = { text = "{", prio = 8 },
+      --     NextParagraph = { text = "}", prio = 8 },
+      -- },
+      -- disabled_fts = {
+      --     "startify",
+      -- },
+    },
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
 
   -- we use cmp plugin only when in insert mode
@@ -100,7 +158,6 @@ return {
 
   {
     "stevearc/conform.nvim",
-    lazy = true,
     opts = require "plugins.configs.conform",
   },
 
@@ -113,6 +170,26 @@ return {
         scope = { char = "│", highlight = "Comment" },
       }
     end,
+  },
+  -- highlight word under cursor.
+  { "echasnovski/mini.cursorword", version = "*" },
+  -- ai
+  {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup {
+        keymaps = {
+          accept_suggestion = "<C-l>",
+          clear_suggestion = "<C-h>",
+          next_suggestion = "<C-n>",
+        },
+      }
+    end,
+  },
+  -- session manager
+  {
+    "pluffie/neoproj",
+    cmd = { "ProjectOpen", "ProjectNew" },
   },
 
   -- files finder etc

@@ -28,3 +28,10 @@ map("v", "<leader>/", "gc", { remap = true })
 map("n", "<leader>fm", function()
   require("conform").format()
 end)
+
+-- vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)
+
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+
+
