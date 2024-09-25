@@ -39,6 +39,14 @@ return {
       require "plugins.configs.oil"
     end,
   },
+
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {--[[ things you want to change go here]]
+      open_mapping = [[<c-\>]],
+    },
+  },
   {
     "akinsho/bufferline.nvim",
     event = "BufReadPre",

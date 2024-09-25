@@ -1,5 +1,3 @@
-require "arjun"
-
 require "options"
 require "mappings"
 require "commands"

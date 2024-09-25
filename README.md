@@ -1,27 +1,27 @@
-# TinyVim
-- Minimal Neovim config meant to be a starting point for new neovim users.
+# Arjun's Neovim Config
 
-![2023-09-26-133901_2560x1440_scrot](https://github.com/NvChad/tinyvim/assets/59060246/ce143ca2-07f1-4d54-971d-0f8304c50b58)
+- This is my personal neovim config. 
+- This config is derived from [NvChad's TinyVim](https://github.com/NvChad/tinyvim)
 
-# Install
-- Linux or MacOS
+# Installation
+
+- Clone this repo
+
 ```bash
-git clone https://github.com/NvChad/tinyvim ~/.config/nvim && nvim
+git clone https://github.com/Arjun-git/arjun-neovim-config.git --depth=1 ~/.config/nvim && nvim
 ```
 
-Run `:MasonInstallAll` command after lazy.nvim finishes downloading plugins
+- Make sure to run :MasonInstallAll command after lazy.nvim finishes downloading plugins
 
-- Windows
 ```bash
-git clone https://github.com/NvChad/tinyvim $HOME\AppData\Local\nvim --depth 1 && nvim
+:MasonInstallAll
 ```
+# Screenshots
 
-Run `:MasonInstallAll` command after lazy.nvim finishes downloading plugins
-
-# Reset
-```bash
-rm -rf ~/.local/share/nvim && rm -rf ~/.config/nvim/lazy-lock.json
-```
+![2024-09-25-230851](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_230851.png)
+![2024-09-25-230927](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_230927.png)
+![2024-09-25-233205](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_233205.png)
+![2024-09-25-233415](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_233415.png)
 
 # Dir structure
 ```bash
@@ -37,11 +37,6 @@ rm -rf ~/.local/share/nvim && rm -rf ~/.config/nvim/lazy-lock.json
             ├── telescope.lua
             └── ( more ... )
 ```
-
-# About
-- Dont expect this config to be beautiful or blazing fast (no hardcore lazyloading is done)! 
-- I'm just using some plugins with their default configs
-- This config only uses only lesser plugins which I think are important for any config.
 
 # Important Plugins used
 Below is the list of some very important plugins which I think should be must for any neovim config.
@@ -59,3 +54,7 @@ Below is the list of some very important plugins which I think should be must fo
 | comment.nvim            | Commenting                                   |
 | telescope.nvim          | Fuzzy finder                                 |
 | conform.nvim            | Formatter                                    |
+| which-key.nvim          | Keybindings                                  |
+| oil.nvim                | Netrw replacement                            |
+| precognition.nvim       | Vim motions indicator                        |
+| supermaven-nvim         | AI code completion                           |
