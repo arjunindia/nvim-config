@@ -18,10 +18,10 @@ git clone https://github.com/Arjun-git/arjun-neovim-config.git --depth=1 ~/.conf
 ```
 # Screenshots
 
-![2024-09-25-230851](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_230851.png)
-![2024-09-25-230927](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_230927.png)
-![2024-09-25-233205](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_233205.png)
-![2024-09-25-233415](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshot/Screenshot_20240925_233415.png)
+![2024-09-25-230851](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshots/Screenshot_20240925_230851.png)
+![2024-09-25-230927](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshots/Screenshot_20240925_230927.png)
+![2024-09-25-233205](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshots/Screenshot_20240925_233205.png)
+![2024-09-25-233415](https://raw.githubusercontent.com/arjunindia/nvim-config/refs/heads/main/screenshots/Screenshot_20240925_233415.png)
 
 # Dir structure
 ```bash
@@ -58,3 +58,4 @@ Below is the list of some very important plugins which I think should be must fo
 | oil.nvim                | Netrw replacement                            |
 | precognition.nvim       | Vim motions indicator                        |
 | supermaven-nvim         | AI code completion                           |
+| toggleterm.nvim         | Terminal manager                             |
