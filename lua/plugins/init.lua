@@ -189,6 +189,14 @@ return {
       }
     end,
   },
+  {
+    "code-biscuits/nvim-biscuits",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
+    },
+  },
+
   -- highlight word under cursor.
   { "echasnovski/mini.cursorword", version = "*" },
   -- ai
