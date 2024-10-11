@@ -8,7 +8,7 @@
 - Clone this repo
 
 ```bash
-git clone https://github.com/Arjun-git/arjun-neovim-config.git --depth=1 ~/.config/nvim && nvim
+git clone https://github.com/arjunindia/nvim-config.git --depth=1 ~/.config/nvim && nvim
 ```
 
 - Make sure to run :MasonInstallAll command after lazy.nvim finishes downloading plugins
